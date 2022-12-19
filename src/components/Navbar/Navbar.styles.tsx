@@ -1,8 +1,12 @@
 import styled from 'styled-components';
 import {Link} from 'react-router-dom'
 
+interface Props{
+  color:string;
+}
+
 export const Nav=styled.nav`
-    padding: 25px;
+    padding: 25px 40px;
     display:flex;
     align-items:center;
     justify-content:space-between;
@@ -20,19 +24,24 @@ export const LinkBox=styled.div`
     display:flex;
     align-items:center;
     justify-content:center;
-    gap:10px;
+    gap:30px;
+
+    & li{
+      list-style:none;
+    }
 `
 
-export const LinkItem=styled(Link)`
+export const LinkItem=styled(Link)<Props>`
  position:relative;
  text-decoration:none; 
  color:#fff;
  font-size:14px;  
 
+
  &:after {
     content: "";
     position:absolute;
-    background-color:#2d68f0;
+    background-color:${props => (props.color)};
     width:0;
     height:3px;
     transition:0.3s;

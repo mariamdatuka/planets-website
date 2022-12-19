@@ -2,13 +2,59 @@ import React from 'react'
 import { Nav, Logo, LinkBox, LinkItem } from './Navbar.styles';
 
 
+const Navbar = () => {
 
+  const planets:{path:string, name:string, color:string}[]=[
+    {
+      path:'',
+      name:'MERCURY',
+      color:'#419EBB'
+    },
+  
+    {
+      path:'venus',
+      name:'VENUS',
+      color:'#EDA249' 
+    },
+  
+    {
+      path:'earth',
+      name:'EARTH',
+      color: '#6D2ED5'
 
-interface Props{
-  planets:any
-}
+    },
+  
+    {
+      path:'mars',
+      name:'MARS',
+      color:'#D14C32'
+    },
+  
+    {
+      path:'jupiter',
+      name:'JUPITER',
+      color:'#D83A34'
+    },
+  
+    {
+      path:'saturn',
+      name:'SATURN',
+      color:'#CD5120'
+    },
+  
+    {
+      path:'uranus',
+      name:'URANUS',
+      color:'#1EC1A2'
+    },
+  
+    {
+      path:'neptune',
+      name:'NEPTUNE',
+      color:'#2D68F0'
 
-const Navbar = ({planets}:Props) => {
+    }
+  ]
 
 
   return (
@@ -17,9 +63,9 @@ const Navbar = ({planets}:Props) => {
         <Nav>
             <Logo to='/'>THE PLANETS</Logo>
             <LinkBox>
-              {planets?.map((item:any,index:any)=>(
+              {planets?.map((item,index)=>(
                   <li key={index}>
-                    <LinkItem to={`/${item.path}`}>{item.name}</LinkItem>
+                    <LinkItem color={item.color} to={`/${item.path}`}>{item.name}</LinkItem>
                   </li>
                 ))
               }

@@ -13,51 +13,11 @@ import Mars from './components/Planets/Mars';
 
 
 function App() {
-  const planets:{path:string, name:string}[]=[
-  {
-    path:'',
-    name:'MERCURY'
-  },
 
-  {
-    path:'venus',
-    name:'VENUS'
-  },
-
-  {
-    path:'earth',
-    name:'EARTH',
-  },
-
-  {
-    path:'mars',
-    name:'MARS',
-  },
-
-  {
-    path:'jupiter',
-    name:'JUPITER',
-  },
-
-  {
-    path:'saturn',
-    name:'SATURN',
-  },
-
-  {
-    path:'uranus',
-    name:'URANUS',
-  },
-
-  {
-    path:'neptune',
-    name:'NEPTUNE'
-  }
-]
 
   return (
     <>
-    <Navbar planets={planets}/>
+    <Navbar/>
     <Routes>
       <Route path='/' element={<Mercury/>}/>
       <Route path='/venus' element={<Venus/>}/>

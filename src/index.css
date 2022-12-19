@@ -20,6 +20,7 @@ body {
   background-image: url('./assets/background-stars.svg');
   height:100vh;
   background-size: 100%;
+  color:#fff;
   }
 
 code {
