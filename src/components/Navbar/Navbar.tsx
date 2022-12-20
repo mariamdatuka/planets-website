@@ -1,8 +1,14 @@
-import React from 'react'
-import { Nav, Logo, LinkBox, LinkItem } from './Navbar.styles';
+import React, {useState} from 'react'
+import { Nav, Logo, LinkBox, LinkItem, OpenNavButton, MobileNav, Item, Box, Circle } from './Navbar.styles';
+import icon from '../../assets/icon-hamburger.svg';
+import arrow from '../../assets/icon-chevron.svg';
 
 
 const Navbar = () => {
+
+  const [isClicked, setIsClicked]=useState<boolean>(false);
+
+  console.log(isClicked);
 
   const planets:{path:string, name:string, color:string}[]=[
     {
@@ -60,7 +66,7 @@ const Navbar = () => {
   return (
 
     <>
-        <Nav>
+        <Nav isClicked={isClicked}>
             <Logo to='/'>THE PLANETS</Logo>
             <LinkBox>
               {planets?.map((item,index)=>(
@@ -69,8 +75,31 @@ const Navbar = () => {
                   </li>
                 ))
               }
+              <OpenNavButton onClick={()=>setIsClicked(!isClicked)}> 
+                 <img src={icon} alt='icon'/>
+              </OpenNavButton>
               </LinkBox>
-            
+              {
+                isClicked && <>
+                    <MobileNav>
+                      {planets?.map((item,index)=>(
+                        <Box key={index}>
+                          <div style={{display:'flex', gap:'10px'}}>
+                          <Circle color={item.color}/>
+                          <li key={index}>
+                             <Item  to={`/${item.path}`}>{item.name}</Item>
+                          </li>
+                          </div>
+                          <div>
+                          <img src={arrow} alt='arrow'/>
+                          </div>
+                         </Box>
+                        ))
+                       }
+                   </MobileNav>
+                  </>
+              }
+         
         </Nav>
     </>
   )

@@ -1,9 +1,5 @@
 import styled from 'styled-components'
 
-interface Props{
- 
-}
-
 
 export const MainContent=styled.div`
     display:flex;
@@ -35,6 +31,7 @@ export const General=styled.div`
 
     & h2{
         font-size:80px;
+        font-family:'Antonio', sans-serif;
       }
 
     & div{
@@ -56,15 +53,19 @@ export const ButtonsBox=styled.div`
     
 `
 
-export const Button=styled.div`
+export const Button=styled.button`
     width:320px;
     padding: 0 20px;
     height:40px;
     border:1px solid gray;
     display:flex;
+    color:#fff;
+    background:none;
     align-items:center;
     gap:20px;
     letter-spacing:2px;
+    font-size:14px;
+    cursor:pointer;
     transition:0.3s ease-in-out;
 
     &:hover{

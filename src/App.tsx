@@ -4,9 +4,9 @@ import Mercury from './components/Planets/Mercury';
 import  Earth from './components/Planets/Earth';
 import Venus  from './components/Planets/Venus';
 import  Jupiter  from './components/Planets/Jupiter';
-import { Saturn } from './components/Planets/Saturn';
-import { Uranus } from './components/Planets/Uranus';
-import { Neptune } from './components/Planets/Neptune';
+import  Saturn  from './components/Planets/Saturn';
+import  Uranus  from './components/Planets/Uranus';
+import  Neptune  from './components/Planets/Neptune';
 import Mars from './components/Planets/Mars';
 
 

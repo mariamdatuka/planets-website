@@ -5,12 +5,22 @@ interface Props{
   color:string;
 }
 
-export const Nav=styled.nav`
+interface Height{
+  isClicked:boolean;
+}
+
+export const Nav=styled.nav<Height>`
+    width:100%;
     padding: 25px 40px;
+    height:${(props)=>props.isClicked?'100vh':'80px'};
     display:flex;
     align-items:center;
     justify-content:space-between;
     border-bottom:1px solid gray;
+
+    @media (min-width: 700px) {
+    height: 80px;
+  }
 `
 
 export const Logo=styled(Link)`
@@ -18,6 +28,7 @@ export const Logo=styled(Link)`
     font-size:26px;
     text-decoration:none;
     font-weight:bold;
+    font-family:'Antonio', sans-serif;
 `
 
 export const LinkBox=styled.div`
@@ -56,4 +67,57 @@ export const LinkItem=styled(Link)<Props>`
   &:hover:after{
     width:100%;
   }
+
+  @media (max-width:700px){
+    display:none;
+   }
+`
+
+export const OpenNavButton=styled.button`
+   width:70px;
+   height:50px;
+   background:none;
+   border:none;
+   color:white;
+   cursor:pointer;
+   font-size:45px;
+
+   @media (min-width:700px){
+    display:none;
+   }
+`
+
+export const MobileNav=styled.div`
+  display:flex;
+  flex-direction:column;
+
+  & li{
+      list-style:none;
+    }
+`
+
+export const Item=styled(Link)`
+   text-decoration:none; 
+   color:#fff;
+   font-size:16px;  
+`
+
+export const Box=styled.div`
+  width:100vw;
+  height:40px;
+  border-bottom:1px solid gray;
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+
+  @media(min-width:700px){
+    display:none;
+  }
+`
+
+export const Circle=styled.div<Props>`
+  width:15px;
+  height:15px;
+  border-radius:50%;
+  background-color:${props=>(props.color)};
 `

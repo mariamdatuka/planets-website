@@ -6,20 +6,21 @@ import { ImgContainer,ButtonsBox, Button, MainContent, InfoBox, General} from '.
 import AdditionalInfo from '../AdditionalInfo/AdditionalInfo'
 import data from '../../data/data.json';
 import {useState} from 'react';
-import { click } from '@testing-library/user-event/dist/click';
+
 
 const Mercury = () => {
 
   const [info, setInfo]=useState<any>(data[0]);
-  const [structure,setStructure]=useState<Boolean>(false);
-  const [geology,setGeology]=useState<Boolean>(false);
-  const [overview,setOverview]=useState<Boolean>(true);
+  const [structure,setStructure]=useState<boolean>(false);
+  const [geology,setGeology]=useState<boolean>(false);
+  const [overview,setOverview]=useState<boolean>(true);
+  const [active, setActive]=useState<boolean>(false)
 
 
   const handleClick=()=>{
     setOverview(true);
     setStructure(false);
-    setGeology(false)
+    setGeology(false);
   }
 
   const handleClick2=()=>{
@@ -39,7 +40,8 @@ const Mercury = () => {
     {
       id:'01',
       name:'OVERVIEW',
-      onclick: handleClick
+      onclick: handleClick,
+      color:'#fff',
       
     },
 
@@ -47,12 +49,14 @@ const Mercury = () => {
       id:'02',
       name:'INTERNAL STRUCTURE',
       onclick: handleClick2,
+      color:'#fff',
     },
 
     {
       id:'03',
       name:'SURFACE GEOLOGY',
-      onclick: handleClick3
+      onclick: handleClick3,
+      color:'#fff',
     },
   ]
 
@@ -83,9 +87,9 @@ const Mercury = () => {
         <ButtonsBox>
            {
             buttonsArray.map((item,index)=>(
-              <Button key={index} onClick={item.onclick}>
-                <span>{item.id}</span>
-                 <p>{item.name}</p>
+              <Button key={index} onClick={item.onclick} color={item.color}>
+                 {item.id} 
+              <p>{item.name}</p>
               </Button>
             ))
            }
