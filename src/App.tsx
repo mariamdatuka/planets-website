@@ -28,6 +28,7 @@ function App() {
       <Route path='/uranus' element={<Uranus/>}/>
       <Route path='/neptune' element={<Neptune/>}/>
     </Routes>
+
     </>
   );
 }

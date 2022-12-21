@@ -2,7 +2,7 @@ import React from 'react'
 import mercury from '../../assets/planet-mercury.svg'
 import internal from '../../assets/planet-mercury-internal.svg'
 import geolog from '../../assets/geology-mercury.png';
-import { ImgContainer,ButtonsBox, Button, MainContent, InfoBox, General} from './Styles'
+import { ImgContainer,ButtonsBox, Button, MainContent, InfoBox, General, ButtonsBoxMobile, MobileButton} from './Styles'
 import AdditionalInfo from '../AdditionalInfo/AdditionalInfo'
 import data from '../../data/data.json';
 import {useState} from 'react';
@@ -65,6 +65,15 @@ const Mercury = () => {
   return (
     <>
     <MainContent>
+         <ButtonsBoxMobile>
+            {
+             buttonsArray.map((item,index)=>(
+              <MobileButton key={index} onClick={item.onclick} color={item.color}>
+                   {item.name}
+              </MobileButton>
+            ))
+           }
+           </ButtonsBoxMobile>
     <ImgContainer>
          {structure && <img src={internal} alt='img'/>}
          {geology && <img src={geolog} alt='img'/>}

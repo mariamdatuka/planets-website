@@ -1,5 +1,5 @@
 import React, {useState} from 'react'
-import { Nav, Logo, LinkBox, LinkItem, OpenNavButton, MobileNav, Item, Box, Circle } from './Navbar.styles';
+import { Nav, Logo, LinkBox, LinkItem, OpenNavButton, MobileNav, Item, Box, Planet, Circle } from './Navbar.styles';
 import icon from '../../assets/icon-hamburger.svg';
 import arrow from '../../assets/icon-chevron.svg';
 
@@ -8,7 +8,9 @@ const Navbar = () => {
 
   const [isClicked, setIsClicked]=useState<boolean>(false);
 
-  console.log(isClicked);
+  const handleClick=()=>{
+    setIsClicked(false);
+  }
 
   const planets:{path:string, name:string, color:string}[]=[
     {
@@ -65,8 +67,9 @@ const Navbar = () => {
 
   return (
 
-    <>
-        <Nav isClicked={isClicked}>
+    <>  
+        
+          <Nav>
             <Logo to='/'>THE PLANETS</Logo>
             <LinkBox>
               {planets?.map((item,index)=>(
@@ -75,21 +78,22 @@ const Navbar = () => {
                   </li>
                 ))
               }
+              </LinkBox>
               <OpenNavButton onClick={()=>setIsClicked(!isClicked)}> 
                  <img src={icon} alt='icon'/>
               </OpenNavButton>
-              </LinkBox>
+              </Nav>
               {
                 isClicked && <>
                     <MobileNav>
                       {planets?.map((item,index)=>(
-                        <Box key={index}>
-                          <div style={{display:'flex', gap:'10px'}}>
+                        <Box key={index} onClick={handleClick}>
+                          <Planet>
                           <Circle color={item.color}/>
                           <li key={index}>
                              <Item  to={`/${item.path}`}>{item.name}</Item>
                           </li>
-                          </div>
+                          </Planet>
                           <div>
                           <img src={arrow} alt='arrow'/>
                           </div>
@@ -100,7 +104,7 @@ const Navbar = () => {
                   </>
               }
          
-        </Nav>
+      
     </>
   )
 }
