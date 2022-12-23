@@ -2,7 +2,7 @@ import React from 'react'
 import mars from '../../assets/planet-mars.svg'
 import internal from '../../assets/planet-mars-internal.svg'
 import geolog from '../../assets/geology-mars.png';
-import { ImgContainer,ButtonsBox, Button, MainContent, InfoBox, General} from './Styles'
+import { ImgContainer,ButtonsBox, Button, MainContent, InfoBox, General, ButtonsBoxMobile, MobileButton} from './Styles'
 import AdditionalInfo from '../AdditionalInfo/AdditionalInfo'
 import data from '../../data/data.json';
 import {useState} from 'react';
@@ -37,7 +37,8 @@ const Mars = () => {
     {
       id:'01',
       name:'OVERVIEW',
-      onclick: handleClick
+      onclick: handleClick,
+      color:'#fff',
       
     },
 
@@ -45,18 +46,29 @@ const Mars = () => {
       id:'02',
       name:'INTERNAL STRUCTURE',
       onclick: handleClick2,
+      color:'#fff',
     },
 
     {
       id:'03',
       name:'SURFACE GEOLOGY',
-      onclick: handleClick3
+      onclick: handleClick3,
+      color:'#fff',
     },
   ]
 
   return (
     <>
      <MainContent>
+     <ButtonsBoxMobile>
+            {
+             buttonsArray.map((item,index)=>(
+              <MobileButton key={index} onClick={item.onclick} color={item.color}>
+                   {item.name}
+              </MobileButton>
+            ))
+           }
+           </ButtonsBoxMobile>
     <ImgContainer>
          {structure && <img src={internal} alt='img'/>}
          {geology && <img src={geolog} alt='img'/>}

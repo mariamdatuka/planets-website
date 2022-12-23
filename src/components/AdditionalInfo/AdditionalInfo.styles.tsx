@@ -10,10 +10,15 @@ export const Content=styled.div`
         padding: 80px 50px;
     }
 
-    @media (max-width:499px){
+    @media (max-width:799px){
+        padding: 80px 20px;
+    }
+
+    @media (max-width:599px){
       flex-direction:column;
-      gap:10px;
-      padding:40px 50px;
+      gap:5px;
+      align-items:center;
+      padding:30px 0 0 0;
     }
 `
 export const Container=styled.div`
@@ -51,13 +56,22 @@ export const Container=styled.div`
         font-size:24px;
     }
 
-    @media(max-width:499px){
+}
+
+    @media(max-width:799px){
+        width:500px;
+    }
+
+    @media(max-width:599px){
         flex-direction:row;
         align-items:center;
         justify-content:space-between;
         height:50px;
         width:330px;
+
+        & h1{
+            font-size:22px;
+        }
     }
-   }
   `
 

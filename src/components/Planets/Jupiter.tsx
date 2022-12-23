@@ -2,7 +2,7 @@ import React from 'react'
 import jupiter from '../../assets/planet-jupiter.svg'
 import internal from '../../assets/planet-jupiter-internal.svg'
 import geolog from '../../assets/geology-jupiter.png';
-import { ImgContainer,ButtonsBox, Button, MainContent, InfoBox, General} from './Styles'
+import { ImgContainer,ButtonsBox, Button, MainContent, InfoBox, General, ButtonsBoxMobile, MobileButton} from './Styles'
 import AdditionalInfo from '../AdditionalInfo/AdditionalInfo'
 import data from '../../data/data.json';
 import {useState} from 'react';
@@ -38,7 +38,8 @@ const Jupiter = () => {
     {
       id:'01',
       name:'OVERVIEW',
-      onclick: handleClick
+      onclick: handleClick,
+      color:'#fff',
       
     },
 
@@ -46,12 +47,14 @@ const Jupiter = () => {
       id:'02',
       name:'INTERNAL STRUCTURE',
       onclick: handleClick2,
+      color:'#fff',
     },
 
     {
       id:'03',
       name:'SURFACE GEOLOGY',
-      onclick: handleClick3
+      onclick: handleClick3,
+      color:'#fff',
     },
   ]
 
@@ -59,6 +62,15 @@ const Jupiter = () => {
   return (
     <>
        <MainContent>
+       <ButtonsBoxMobile>
+            {
+             buttonsArray.map((item,index)=>(
+              <MobileButton key={index} onClick={item.onclick} color={item.color}>
+                   {item.name}
+              </MobileButton>
+            ))
+           }
+           </ButtonsBoxMobile>
     <ImgContainer>
          {structure && <img src={internal} alt='img'/>}
          {geology && <img src={geolog} alt='img'/>}

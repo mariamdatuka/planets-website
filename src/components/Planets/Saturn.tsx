@@ -2,7 +2,7 @@ import React from 'react'
 import saturn from '../../assets/planet-saturn.svg'
 import internal from '../../assets/planet-saturn-internal.svg'
 import geolog from '../../assets/geology-saturn.png';
-import { ImgContainer,ButtonsBox, Button, MainContent, InfoBox, General} from './Styles'
+import { ImgContainer,ButtonsBox, Button, MainContent, InfoBox, General, MobileButton, ButtonsBoxMobile} from './Styles'
 import AdditionalInfo from '../AdditionalInfo/AdditionalInfo'
 import data from '../../data/data.json';
 import {useState} from 'react';
@@ -41,7 +41,8 @@ const buttonsArray=[
   {
     id:'01',
     name:'OVERVIEW',
-    onclick: handleClick
+    onclick: handleClick,
+    color:'#fff',
     
   },
 
@@ -49,17 +50,28 @@ const buttonsArray=[
     id:'02',
     name:'INTERNAL STRUCTURE',
     onclick: handleClick2,
+    color:'#fff',
   },
 
   {
     id:'03',
     name:'SURFACE GEOLOGY',
-    onclick: handleClick3
+    onclick: handleClick3,
+    color:'#fff',
   },
 ]
   return (
     <>
        <MainContent>
+       <ButtonsBoxMobile>
+            {
+             buttonsArray.map((item,index)=>(
+              <MobileButton key={index} onClick={item.onclick} color={item.color}>
+                   {item.name}
+              </MobileButton>
+            ))
+           }
+           </ButtonsBoxMobile>
     <ImgContainer>
          {structure && <img src={internal} alt='img'/>}
          {geology && <img src={geolog} alt='img'/>}

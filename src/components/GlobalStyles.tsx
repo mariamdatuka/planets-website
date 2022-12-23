@@ -17,5 +17,6 @@ export const GlobalStyle=createGlobalStyle`
     background-image: url(${stars});
     width:100vw;
     background-size: 100%;
+    overflow:hidden;
     }
 `

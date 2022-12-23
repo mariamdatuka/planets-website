@@ -2,7 +2,7 @@ import React from 'react'
 import neptune from '../../assets/planet-neptune.svg'
 import internal from '../../assets/planet-neptune-internal.svg'
 import geolog from '../../assets/geology-neptune.png';
-import { ImgContainer,ButtonsBox, Button, MainContent, InfoBox, General} from './Styles'
+import { ImgContainer,ButtonsBox, Button, MainContent, InfoBox, General, MobileButton, ButtonsBoxMobile} from './Styles'
 import AdditionalInfo from '../AdditionalInfo/AdditionalInfo'
 import data from '../../data/data.json';
 import {useState} from 'react';
@@ -38,7 +38,8 @@ const Neptune = () => {
     {
       id:'01',
       name:'OVERVIEW',
-      onclick: handleClick
+      onclick: handleClick,
+      color:'#fff',
       
     },
 
@@ -46,12 +47,14 @@ const Neptune = () => {
       id:'02',
       name:'INTERNAL STRUCTURE',
       onclick: handleClick2,
+      color:'#fff',
     },
 
     {
       id:'03',
       name:'SURFACE GEOLOGY',
-      onclick: handleClick3
+      onclick: handleClick3,
+      color:'#fff',
     },
   ]
 
@@ -60,6 +63,15 @@ const Neptune = () => {
   return (
     <>
     <MainContent>
+    <ButtonsBoxMobile>
+            {
+             buttonsArray.map((item,index)=>(
+              <MobileButton key={index} onClick={item.onclick} color={item.color}>
+                   {item.name}
+              </MobileButton>
+            ))
+           }
+           </ButtonsBoxMobile>
     <ImgContainer>
          {structure && <img src={internal} alt='img'/>}
          {geology && <img src={geolog} alt='img'/>}

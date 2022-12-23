@@ -20,13 +20,11 @@ export const Nav=styled.nav`
        gap:40px;
     }
 
-    @media (max-width:499px){
+    @media (max-width:599px){
       flex-direction:row;
       justify-content:space-between;
     }
-
 `
-
 export const Logo=styled(Link)`
     color:#fff;
     font-size:26px;
@@ -41,22 +39,19 @@ export const LinkBox=styled.div`
     justify-content:center;
     gap:30px;
 
-    & li{
+   & li{
       list-style:none;
     }
 
-    @media (max-width:499px){
+    @media (max-width:599px){
     display:none;
    }
 `
-
 export const LinkItem=styled(Link)<Props>`
  position:relative;
  text-decoration:none; 
  color:#fff;
  font-size:14px;  
-
-
  &:after {
     content: "";
     position:absolute;
@@ -76,7 +71,6 @@ export const LinkItem=styled(Link)<Props>`
     width:100%;
   }
 `
-
 export const OpenNavButton=styled.button`
    width:70px;
    height:50px;
@@ -86,13 +80,12 @@ export const OpenNavButton=styled.button`
    cursor:pointer;
    
 
-   @media (min-width:499px){
+   @media (min-width:599px){
     display:none;
    }
 `
-
 export const MobileNav=styled.div`
-  height:100vh;
+  min-height:100vh;
   display:flex;
   flex-direction:column;
   align-items: flex-start;
@@ -103,7 +96,7 @@ export const MobileNav=styled.div`
       list-style:none;
     }
 
-  @media (min-width: 499px) {
+  @media (min-width: 599px) {
     display: none;
   }
 `
@@ -113,17 +106,13 @@ export const Planet=styled.div`
   align-items:center;
   justify-content:center;
   gap:20px;
-
 `
-
 export const Item=styled(Link)`
    text-decoration:none; 
    color:#fff;
    font-size:18px;  
    font-weight:bold;
-   
 `
-
 export const Box=styled.div`
   width:100%;
   height:70px;
@@ -131,9 +120,7 @@ export const Box=styled.div`
   display:flex;
   align-items:center;
   justify-content:space-between;
-
 `
-
 export const Circle=styled.div<Props>`
   width:15px;
   height:15px;

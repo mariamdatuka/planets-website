@@ -11,17 +11,16 @@ export const MainContent=styled.div`
         flex-direction:column;
     }
 
-    @media(max-width:499px){
+    @media(max-width:599px){
         padding-top:0;
     }
 `
 
 export const InfoBox=styled.div`
-    align-self:flex-start;
     display:flex;
     flex-direction:column;
     gap:30px;
-    padding-left:250px;
+    padding-left:100px;
 
     @media(max-width:799px){
         flex-direction:row;
@@ -30,9 +29,10 @@ export const InfoBox=styled.div`
         padding-right:50px;
     }
 
-    @media(max-width:499px){
+    @media(max-width:599px){
         align-items:center;
         justify-content:center;
+        padding: 30px 0 0 0;
     }
 `
 
@@ -50,6 +50,13 @@ export const ImgContainer=styled.div`
         width:200px;
        }
     }
+
+    @media(max-width:799px){
+        & img{
+        width:150px;
+       }
+
+}
 `
 
 export const General=styled.div`
@@ -82,10 +89,21 @@ export const General=styled.div`
         font-size:16px;
        }
 
-       @media(max-width:499px){
+       @media(max-width:599px){
         align-items:center;
-        justify-content:center;
         gap:20px;
+        
+        h2{
+            font-size:42px;
+        }
+        & div{
+        font-size:14px;
+        padding-left:5px;
+        padding-right:5px;
+        height:80px;
+        text-align:center;
+       }
+
        }
     }
 `
@@ -101,7 +119,7 @@ export const ButtonsBox=styled.div`
      padding-top:30px;
     }
     
-    @media(max-width:499px){
+    @media(max-width:599px){
         display:none;
     }
 `
@@ -135,14 +153,14 @@ export const Button=styled.button`
 
 export const ButtonsBoxMobile=styled.div`
     display:none;
-   @media(max-width:499px){
+   @media(max-width:599px){
         display:flex;
         margin-bottom:50px;
     }
 `
 
 export const MobileButton=styled.button`
-    width:165px;
+    width:200px;
     height:40px;
     font-size:12px;
     border:none;
@@ -150,4 +168,26 @@ export const MobileButton=styled.button`
     color:gray;
     border-bottom:1px solid gray;
     font-family: 'League Spartan',sans-serif;
+    cursor:pointer;
+
+    &:hover{
+        background-color: #38384F;
+    }
+    
+    @media (max-width:499px){
+        width:150px;
+    }
+
+    @media (max-width:399px){
+        width:140px;
+    }
+
+    @media (max-width:390px){
+        width:130px;
+    }
+
+    @media (max-width:365px){
+        font-size:10px;
+      
+    }
 `

@@ -1,5 +1,5 @@
 import venus from '../../assets/planet-venus.svg'
-import { ImgContainer,ButtonsBox, Button, MainContent, InfoBox, General} from './Styles'
+import { ImgContainer,ButtonsBox, Button, MainContent, InfoBox, General, MobileButton, ButtonsBoxMobile} from './Styles'
 import AdditionalInfo from '../AdditionalInfo/AdditionalInfo'
 import data from '../../data/data.json';
 import internal from '../../assets/planet-venus-internal.svg'
@@ -31,12 +31,43 @@ const Venus = () => {
     setGeology(true)
   }
 
- 
+  const buttonsArray=[
+    {
+      id:'01',
+      name:'OVERVIEW',
+      onclick: handleClick,
+      color:'#fff',
+      
+    },
+
+    {
+      id:'02',
+      name:'INTERNAL STRUCTURE',
+      onclick: handleClick2,
+      color:'#fff',
+    },
+
+    {
+      id:'03',
+      name:'SURFACE GEOLOGY',
+      onclick: handleClick3,
+      color:'#fff',
+    },
+  ]
 
  
   return (
     <>
   <MainContent>
+  <ButtonsBoxMobile>
+            {
+             buttonsArray.map((item,index)=>(
+              <MobileButton key={index} onClick={item.onclick} color={item.color}>
+                   {item.name}
+              </MobileButton>
+            ))
+           }
+           </ButtonsBoxMobile>
     <ImgContainer>
          {structure && <img src={internal} alt='img'/>}
          {geology && <img src={geolog} alt='img'/>}
