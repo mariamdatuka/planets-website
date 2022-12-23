@@ -9,7 +9,7 @@ import {useState} from 'react';
 
 const Jupiter = () => {
 
-  const [info, setInfo]=useState<any>(data[4]);
+  const info=(data[4]);
   const [structure,setStructure]=useState<Boolean>(false);
   const [geology,setGeology]=useState<Boolean>(false);
   const [overview,setOverview]=useState<Boolean>(true);

@@ -12,7 +12,7 @@ import {useState} from 'react';
 
 
 const Saturn = () => {
-  const [info, setInfo]=useState<any>(data[5]);
+  const info=(data[5]);
 const [structure,setStructure]=useState<Boolean>(false);
 const [geology,setGeology]=useState<Boolean>(false);
 const [overview,setOverview]=useState<Boolean>(true);

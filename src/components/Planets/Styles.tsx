@@ -5,7 +5,7 @@ export const MainContent=styled.div`
     display:flex;
     align-items:center;
     justify-content:center;
-    padding-top:100px;
+    padding-top:30px;
 
     @media(max-width:799px){
         flex-direction:column;

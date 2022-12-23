@@ -9,7 +9,7 @@ import {useState} from 'react';
 
 const Earth = () => {
 
-  const [info, setInfo]=useState<any>(data[2]);
+  const info=(data[2]);
   const [structure,setStructure]=useState<Boolean>(false);
   const [geology,setGeology]=useState<Boolean>(false);
   const [overview,setOverview]=useState<Boolean>(true);

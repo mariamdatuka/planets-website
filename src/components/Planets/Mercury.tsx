@@ -10,11 +10,11 @@ import {useState} from 'react';
 
 const Mercury = () => {
 
-  const [info, setInfo]=useState<any>(data[0]);
+  const info=(data[0]);
   const [structure,setStructure]=useState<boolean>(false);
   const [geology,setGeology]=useState<boolean>(false);
   const [overview,setOverview]=useState<boolean>(true);
-  const [active, setActive]=useState<boolean>(false)
+ 
 
 
   const handleClick=()=>{

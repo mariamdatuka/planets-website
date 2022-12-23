@@ -8,7 +8,7 @@ import data from '../../data/data.json';
 import {useState} from 'react';
 
 const Mars = () => {
-  const [info, setInfo]=useState<any>(data[3]);
+  const info=(data[3]);
   const [structure,setStructure]=useState<Boolean>(false);
   const [geology,setGeology]=useState<Boolean>(false);
   const [overview,setOverview]=useState<Boolean>(true);

@@ -8,7 +8,7 @@ import {useState} from 'react';
 
 const Venus = () => {
 
-  const [info, setInfo]=useState<any>(data[1]);
+  const info=(data[1]);
   const [structure,setStructure]=useState<Boolean>(false);
   const [geology,setGeology]=useState<Boolean>(false);
   const [overview,setOverview]=useState<Boolean>(true);

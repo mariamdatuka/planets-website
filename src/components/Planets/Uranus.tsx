@@ -9,7 +9,7 @@ import {useState} from 'react';
 
 const Uranus = () => {
 
-  const [info, setInfo]=useState<any>(data[6]);
+  const info=(data[6]);
   const [structure,setStructure]=useState<Boolean>(false);
   const [geology,setGeology]=useState<Boolean>(false);
   const [overview,setOverview]=useState<Boolean>(true);
